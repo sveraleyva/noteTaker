@@ -1,5 +1,9 @@
 const notes = require("express").Router();
-const { readFromFile, readAndAppend } = require("../helpers/fsUtils");
+const {
+  readFromFile,
+  readAndAppend,
+  writeToFile,
+} = require("../helpers/fsUtils");
 const { v4: uuidv4 } = require("uuid");
 
 // GET Route
@@ -25,6 +29,16 @@ notes.post("/", (req, res) => {
   } else {
     res.error("Error in adding note");
   }
+});
+
+// DELETE Route
+// "/:id" to indicate it's just one note
+notes.delete("/:id", (req, res) => {
+  const noteID = reg.params.id;
+  readFromFile("db/db.json").then((note) => {
+    note.filter((note) => note.id !== noteID);
+    writeFile(notes, "db/db.json");
+  });
 });
 
 module.exports = notes;
