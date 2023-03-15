@@ -1,27 +1,7 @@
 [
     {
-        "title": "Test Title",
-        "text": "Test text",
-        "note_id": "asdfasdf"
-    },
-    {
-        "title": "hello",
-        "text": "mine",
-        "note_id": "eede2811-fee1-4bd4-980b-95d1f4da75e5"
-    },
-    {
-        "title": "hello",
-        "text": "mine",
-        "note_id": "639c72e6-dc25-4aaa-90f4-e41ede2cfc70"
-    },
-    {
-        "title": "mine",
-        "text": "mine",
-        "note_id": "966e1a1c-97ba-40ec-bca2-aa658f038dd2"
-    },
-    {
-        "title": "My Name Is",
-        "text": "No",
-        "note_id": "29136323-9f05-4413-8384-5c18eeb6aa62"
+        "title": "Finish this homework",
+        "text": "My name is Sam",
+        "note_id": "5e2ed98f-0c41-42f8-a8a9-6095e00c7e74"
     }
 ]

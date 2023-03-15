@@ -34,11 +34,14 @@ notes.post("/", (req, res) => {
 // DELETE Route
 // "/:id" to indicate it's just one note
 notes.delete("/:id", (req, res) => {
-  const noteID = reg.params.id;
-  readFromFile("db/db.json").then((note) => {
-    note.filter((note) => note.id !== noteID);
-    writeFile(notes, "db/db.json");
-  });
+  const noteID = req.params.id;
+  readFromFile("db/db.json")
+    .then((data) => JSON.parse(data))
+    .then((notes) => {
+      let filteredNotes = notes.filter((note) => note.id !== noteID);
+      writeToFile("db/db.json", filteredNotes);
+      res.json(`Note deleted successfully 🚀`);
+    });
 });
 
 module.exports = notes;
